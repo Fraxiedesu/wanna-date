@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'sonner';
 
 const Index = () => {
@@ -53,7 +53,7 @@ const Index = () => {
         {step === 0 && (
           <div>
             <h1 className="text-4xl md:text-5xl text-deepPink">
-              Aww... Oki :<
+              {"Aww... Oki :<"}
             </h1>
           </div>
         )}
