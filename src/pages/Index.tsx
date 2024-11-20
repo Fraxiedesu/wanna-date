@@ -6,6 +6,9 @@ import { SpecificLocationPicker } from '@/components/steps/SpecificLocationPicke
 import { FoodPicker } from '@/components/steps/FoodPicker';
 import { DrinkPicker } from '@/components/steps/DrinkPicker';
 import { FinalCard } from '@/components/steps/FinalCard';
+import { toast } from "sonner";
+
+const GOOGLE_SHEET_URL = ''; // Add your Google Apps Script Web App URL here
 
 const Index = () => {
   const [step, setStep] = useState(1);
@@ -23,6 +26,7 @@ const Index = () => {
     setSelectedLocations([]);
     setStep(4);
   };
+  
   const handleLocationToggle = (location: string) => {
     setSelectedLocations(prev =>
       prev.includes(location)
@@ -30,7 +34,9 @@ const Index = () => {
         : [...prev, location]
     );
   };
+  
   const handleLocationSubmit = () => setStep(5);
+  
   const handleFoodToggle = (food: string) => {
     setSelectedFoods(prev =>
       prev.includes(food)
@@ -38,17 +44,36 @@ const Index = () => {
         : [...prev, food]
     );
   };
+  
   const handleFoodSubmit = () => setStep(6);
+  
   const handleDrinkSelect = (drink: string) => setSelectedDrink(drink);
-  const handleDrinkSubmit = () => {
-    // Here you can handle the final submission with all selections
-    console.log({
-      dateTime,
-      selectedCity,
-      selectedLocations,
-      selectedFoods,
-      selectedDrink
-    });
+  
+  const handleDrinkSubmit = async () => {
+    if (GOOGLE_SHEET_URL) {
+      try {
+        const response = await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          body: JSON.stringify({
+            date: dateTime.date,
+            time: dateTime.time,
+            locations: selectedLocations.join(', '),
+            foods: selectedFoods.join(', '),
+            drink: selectedDrink
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to save responses');
+        }
+        
+        toast.success("Responses saved successfully!");
+      } catch (error) {
+        console.error('Error saving responses:', error);
+        toast.error("Couldn't save responses, but don't worry - the date is still on! 😊");
+      }
+    }
+    
     setStep(7);
   };
 
