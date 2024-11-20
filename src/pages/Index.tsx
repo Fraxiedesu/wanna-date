@@ -5,6 +5,7 @@ import { LocationPicker } from '@/components/steps/LocationPicker';
 import { SpecificLocationPicker } from '@/components/steps/SpecificLocationPicker';
 import { FoodPicker } from '@/components/steps/FoodPicker';
 import { DrinkPicker } from '@/components/steps/DrinkPicker';
+import { FinalCard } from '@/components/steps/FinalCard';
 
 const Index = () => {
   const [step, setStep] = useState(1);
@@ -103,6 +104,15 @@ const Index = () => {
             selectedDrink={selectedDrink}
             onDrinkSelect={handleDrinkSelect}
             onSubmit={handleDrinkSubmit}
+          />
+        )}
+
+        {step === 7 && (
+          <FinalCard
+            dateTime={dateTime}
+            selectedLocations={selectedLocations}
+            selectedFoods={selectedFoods}
+            selectedDrink={selectedDrink}
           />
         )}
       </div>
