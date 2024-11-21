@@ -14,7 +14,8 @@ export const FoodPicker = ({ selectedFoods, onFoodToggle, onSubmit }: FoodPicker
     { name: "Fries", image: "/fries.jpg" },
     { name: "Bread", image: "/bread.jpg" },
     { name: "Meal", image: "/meal.jpg" },
-    { name: "Other", image: "/other.jpg" }
+    { name: "Other", image: "/other.jpg" },
+    { name: "Me", image: "/me.jpg" }
   ];
 
   const handleSubmit = () => {
