@@ -9,13 +9,12 @@ interface FoodPickerProps {
 
 export const FoodPicker = ({ selectedFoods, onFoodToggle, onSubmit }: FoodPickerProps) => {
   const foodOptions = [
-    { name: "Street foods", image: "photo-1498936178812-4b2e558d2937" },
-    { name: "Burger", image: "photo-1568901346375-23c9450c58cd" },
-    { name: "Fries", image: "photo-1630384060421-cb20d0e0649d" },
-    { name: "Bread", image: "photo-1509440159596-0249088772ff" },
-    { name: "Meal", image: "photo-1546069901-ba9599a7e63c" },
-    { name: "Other", image: "photo-1606787366850-de6330128bfc" },
-    { name: "Me", image: "photo-1535268647677-300dbf3d78d1" }
+    { name: "Street foods", image: "/street_foods.jpg" },
+    { name: "Burger", image: "/burger.jpg" },
+    { name: "Fries", image: "/fries.jpg" },
+    { name: "Bread", image: "/bread.jpg" },
+    { name: "Meal", image: "/meal.jpg" },
+    { name: "Other", image: "/other.jpg" }
   ];
 
   const handleSubmit = () => {
@@ -46,7 +45,7 @@ export const FoodPicker = ({ selectedFoods, onFoodToggle, onSubmit }: FoodPicker
               `}
             >
               <img
-                src={`https://source.unsplash.com/${food.image}`}
+                src={food.image}
                 alt={food.name}
                 className="w-full h-full object-cover"
               />

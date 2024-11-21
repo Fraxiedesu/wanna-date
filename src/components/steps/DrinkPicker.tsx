@@ -9,9 +9,9 @@ interface DrinkPickerProps {
 
 export const DrinkPicker = ({ selectedDrink, onDrinkSelect, onSubmit }: DrinkPickerProps) => {
   const drinkOptions = [
-    { name: "Water", image: "photo-1548839140-29a749e1cf4d" },
-    { name: "Soft drink", image: "photo-1581006852262-e4307cf6283a" },
-    { name: "Liquor", image: "photo-1514218869824-3b3087f15216" }
+    { name: "Water", image: "/water.jpg" },
+    { name: "Soft drink", image: "/soft_drink.jpg" },
+    { name: "Liquor", image: "/liquor.jpg" }
   ];
 
   const handleSubmit = () => {
@@ -42,7 +42,7 @@ export const DrinkPicker = ({ selectedDrink, onDrinkSelect, onSubmit }: DrinkPic
               `}
             >
               <img
-                src={`https://source.unsplash.com/${drink.image}`}
+                src={drink.image}
                 alt={drink.name}
                 className="w-full h-full object-cover"
               />
