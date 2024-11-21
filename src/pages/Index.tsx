@@ -8,7 +8,7 @@ import { DrinkPicker } from '@/components/steps/DrinkPicker';
 import { FinalCard } from '@/components/steps/FinalCard';
 import { toast } from "sonner";
 
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycby2VlJJHQsYweuK6ImKR-e8KT8L4YhhEmzQBD4KxD8lOZWYBCPLGBWgr3JA-gmf_tQV5A/exec'; // Add your Google Apps Script Web App URL here
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycby2VlJJHQsYweuK6ImKR-e8KT8L4YhhEmzQBD4KxD8lOZWYBCPLGBWgr3JA-gmf_tQV5A/exec';
 
 const Index = () => {
   const [step, setStep] = useState(1);
@@ -78,8 +78,8 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-md text-center animate-in fade-in-50">
+    <div className="w-full min-h-[100dvh] flex items-center justify-center p-4">
+      <div className="w-full max-w-md mx-auto animate-in fade-in-50">
         {step === 1 && (
           <InitialQuestion onYes={handleYes} onNo={handleNo} />
         )}
