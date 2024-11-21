@@ -8,7 +8,7 @@ import { DrinkPicker } from '@/components/steps/DrinkPicker';
 import { FinalCard } from '@/components/steps/FinalCard';
 import { toast } from "sonner";
 
-const GOOGLE_SHEET_URL = ''; // Add your Google Apps Script Web App URL here
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycby2VlJJHQsYweuK6ImKR-e8KT8L4YhhEmzQBD4KxD8lOZWYBCPLGBWgr3JA-gmf_tQV5A/exec'; // Add your Google Apps Script Web App URL here
 
 const Index = () => {
   const [step, setStep] = useState(1);
