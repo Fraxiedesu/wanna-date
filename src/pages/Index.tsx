@@ -78,8 +78,8 @@ const Index = () => {
   };
 
   return (
-    <div className="w-full min-h-[100dvh] flex items-center justify-center p-4">
-      <div className="w-full max-w-md mx-auto animate-in fade-in-50">
+    <div className="flex min-h-[100dvh] w-full items-center justify-center overflow-hidden px-4 py-6">
+      <div className="w-full max-w-md animate-in fade-in-50">
         {step === 1 && (
           <InitialQuestion onYes={handleYes} onNo={handleNo} />
         )}
