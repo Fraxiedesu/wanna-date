@@ -79,14 +79,14 @@ const Index = () => {
 
   return (
     <div className="flex min-h-[100dvh] w-full items-center justify-center overflow-hidden px-4 py-6">
-      <div className="w-full max-w-md animate-in fade-in-50">
+      <div className="w-full max-w-md animate-in fade-in-50 flex flex-col items-center justify-center">
         {step === 1 && (
           <InitialQuestion onYes={handleYes} onNo={handleNo} />
         )}
 
         {step === 0 && (
-          <div>
-            <h1 className="text-4xl md:text-5xl text-deepPink">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-4xl md:text-5xl text-deepPink text-center">
               {"Aww... Oki :<"}
             </h1>
           </div>

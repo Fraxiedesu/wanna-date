@@ -18,8 +18,8 @@ export const InitialQuestion = ({ onYes, onNo }: InitialQuestionProps) => {
   };
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-4xl md:text-5xl text-deepPink mb-8">
+    <div className="flex flex-col items-center justify-center space-y-8">
+      <h1 className="text-4xl md:text-5xl text-deepPink text-center">
         You wanna meet up? :3
       </h1>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
